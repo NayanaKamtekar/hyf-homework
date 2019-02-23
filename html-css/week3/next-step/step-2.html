@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome to CustomTailor!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="../styles/css-reset.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="../styles/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Krub:300" rel="stylesheet">
+    </head>
+    <body>
+        <div class="logo-nav-bar">
+            <div class="logo-div">
+                <img src="../images/logo.png" alt="logo image">
+            </div>
+
+            <nav class="nav-div">
+                <a>HOME</a>
+                <a>ABOUT US</a>
+                <a>OUR SERVICES</a>
+                <a>OUR OFFICE</a>
+            </nav>
+        </div>
+        
+        <header class="page-header">
+            <h1 class="page-header-title">Sign up to yourcustomtailor.com</h1>
+            <br>
+            <hr>
+            <h2>Step 2/4 - How can we reach you?</h2>
+            <br>
+            <h3>Progress</h3>
+            <progress value="40" max="100" class="progress-bar"> </progress>
+            <br><br>
+            <p>Nice to meet you. Lets spend a minute to get to know each other? Please enter the following: </p>
+        </header>
+
+        <main>
+            <form action="/signup" method="post">
+                <div class="container">
+                    <div class="form-row-info">
+                        <label for="email">Email*</label>
+                        <input type="email" name="email" id="email" placeholder="e.g. abcd@efg.com" required>
+                    </div>
+                    <div class="form-row-info">
+                        <label for="phone-no">Phone*</label>
+                        <input type="tel" name="phone" id="phone-no" placeholder="e.g. +45 00 00 00 00" required>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="container">
+                    <div class="form-row-info">
+                        <label for="password">Password*</label>
+                        <input type="password" name="password" id="password" placeholder="" required>
+                    </div>
+                </div>
+
+                <br>
+                
+                <div class="container">
+                    <div class="form-row-info">
+                        <label for="Re-enter-password">Re-enter Password*</label>
+                        <input type="password" name="re-enter password" id="Re-enter-password" placeholder="" required>
+                    </div>
+                </div>
+
+                <br>
+
+                <p>I want to signup for the newsletter</p>
+
+                <br>
+
+                <div class= "container">
+                    <div class="form-row-newsletter">
+                        <label for="weekly-news"> Weekly news</label>
+                        <input type="radio" name="newsletter" value="Weekly news" id="weekly-news">
+                    </div>
+
+                    <div class="form-row-newsletter">
+                        <label for="monthly-news"> Monthly news</label>
+                        <input type="radio" name="newsletter" value="Monthly news" id="monthly-news"> 
+                    </div>
+                    
+                    <div class="form-row-newsletter">
+                        <label for="dont-send-me-news"> Dont send me news</label>
+                        <input type="radio" name="newsletter" value="Dont send me news" id="dont-send-me-news">
+                    </div>  
+                </div>
+            </form>
+        </main>
+        
+        <div class="next-step-container">
+            <div class="form-next-step">
+                <a href="../next-step/step-3.html">Next step</a> 
+            </div> 
+        </div>
+    </body>
+</html>

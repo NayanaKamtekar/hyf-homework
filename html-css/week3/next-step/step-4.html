@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome to CustomTailor!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="../styles/css-reset.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="../styles/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Krub:300" rel="stylesheet">
+    </head>
+    <body>
+        <div class="logo-nav-bar">
+            <div class="logo-div">
+                <img src="../images/logo.png" alt="logo image">
+            </div>
+
+            <nav class="nav-div">
+                <a>HOME</a>
+                <a>ABOUT US</a>
+                <a>OUR SERVICES</a>
+                <a>OUR OFFICE</a>
+            </nav>
+        </div>
+        
+        <header class="page-header">
+            <h1 class="page-header-title">Sign up to yourcustomtailor.com</h1>
+            <br>
+            <hr>
+            <h2>Step 4/4 - Payment</h2>
+            <br>
+            <h3>Progress</h3>
+            <progress value="80" max="100" class="progress-bar"> </progress>
+            <br><br>
+            <p>Please fill in your payment data</p>
+        </header>
+        
+        <main>
+            <form action="/signup" method="post">
+                <div class="container">
+                    <div class="form-row-info">
+                        <label for="name-on-card">Name on card</label>
+                        <input type="text" name="name on card" id="name-on-card" placeholder="Enter name on the card" required>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="container">
+                    <div class="form-row-cardtype">
+                        <label>Card type</label>   
+                        <select style="margin-left: 2%;"  class="form-cardtype" name="card type" size="1" required>
+                            <option value="">Choose card type...</option>
+                            <option value="discover">Discover</option>
+                            <option value="visa">Visa</option>
+                            <option value="american express">American Express</option>
+                            <option value="mastercard">MasterCard</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="container">
+                    <div class="form-row-info">
+                        <label for="credit-card-number">Credit card number</label>
+                        <input type="text" name="credit card number" id="credit-card-number" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row-info">
+                        <label for="first-name">First name</label>
+                        <input type="text" name="first name" id="first-name" placeholder="" required>
+                    </div>
+                </div>
+        
+                <br>
+
+                <div class="container-1">
+                    <div class="form-row-date">
+                        <label for="expiry-month">Expiry month</label>
+                        <input type="number" name="expiry month" id="expiry-month" min="1" max="12" required>
+                    </div>
+                    <div class="form-row-date">
+                        <label for="expiry-year">Expiry year</label>
+                        <input type="number" name="expiry year" id="expiry-year" min="2019" max="2030" required>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="container-1">
+                    <div class="form-row-ccv">
+                        <label for="ccv-no">CCV</label>
+                        <input type="number" name="ccv-no" id="ccv-no" min="100" max="200" required>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <div class="next-step-container">
+            <div class="form-next-step">
+                <a href="../next-step/step-5.html">Next step</a> 
+            </div> 
+        </div>
+    </body>
+</html>

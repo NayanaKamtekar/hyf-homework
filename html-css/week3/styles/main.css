@@ -1,0 +1,346 @@
+html {
+    background-color: #221E1D;
+}
+
+body {
+    position: relative;
+    margin: 1% auto;
+    padding: 1%;
+    width: 90%;
+    font-size: 17px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    /* background-color: #E9633B; */
+    background: radial-gradient(circle farthest-side, rgb(250, 250, 250), rgb(210, 210, 210));
+    border-radius: 10px;
+    font-family: 'Krub', sans-serif;
+    word-wrap: break-word;
+    border-style: groove;
+    border-width: 5px;
+}
+
+/* Navigation bar and logo wrapper*/
+.logo-nav-bar {
+    display: flex;
+    margin-bottom: 2%; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+/* Logo */
+.logo-div {
+    flex: 1;
+}
+
+/* Navigation bar */
+nav {
+    border: 1px;
+    border-bottom-style: solid;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 1% 0;
+    
+}
+
+/* Anchors in the navigation bar */
+nav a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+
+}   
+
+/* Hover effect fot text for anchor in the navigation bar */
+nav a:hover {
+    font-weight: bold;
+    text-shadow: 1px 1px grey;
+}
+
+h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-bottom: 1%;
+}
+
+progress {
+    width: 100%;
+    height: 40px;
+}
+
+form {
+    padding: 5%;
+} 
+
+/* General wrapper for flex box where two input fields are used */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* General wrapper for flex box where one input field is used */ 
+.container-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    width: 48%;
+}
+
+/* General wrapper for flex box where one input field is used, with little bit more width */ 
+.container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    width: 52%;
+}
+
+/* Inner wrapper fro label + input  */ 
+.form-row-info, .form-row-date {
+    flex-basis: 48%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    white-space: nowrap;
+
+}
+
+.form-row-country, .form-row-shipping, .form-row-cardtype, .form-row-ccv {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    flex-basis: 48%;  
+    white-space: nowrap;
+
+}
+
+/* Label for input field*/
+.form-row-info label, .form-row-country label, .form-row-shipping label, .form-row-cardtype label {
+    font-weight: bold;
+    text-align: right;
+    flex-basis: 33%;  
+}
+
+/* Input field */
+.form-row-info input, .form-row-country select, .check-div,.form-row-cardtype select {
+    flex-basis: 62%;
+    height: 30px; 
+}
+
+
+/* Check-box left align */
+.check-div {
+    text-align: left;
+    }
+
+
+/* Flex check box on smaller screen */
+@media only screen and (max-width: 900px){
+    .check-div  {
+        flex: 1;  
+    }
+}
+
+/* Check-box zoomed for better visual */
+.check-div input {
+    zoom: 2;
+}
+
+/* Profile description wrapper */
+.form-row-profile{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Profile description text area */
+.form-row-profile textarea{
+    flex-grow: 1;
+}
+
+/* To align the profile label with earlier left hand side labels flex-basis value is specified  */
+.form-row-profile label {
+    font-weight: bold;
+    text-align:center;
+    text-align:right ;
+    flex-basis: 17.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Italic text in profile description */
+.profile-discription {
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: lighter;
+    text-align: left;
+    flex-basis: 70%;
+}
+
+/* This is for the small screen to occupy profile label in horizontal space properly*/
+@media only screen and (max-width: 900px)
+{
+    .form-row-profile label, .form-row-shipping label {
+        flex: 1;
+        justify-content: start;
+    }    
+}
+
+/* Next button wrapper */
+.next-step-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Inner wraper for next button */
+.form-next-step {
+    width: 30%;
+    display: flex;
+}
+
+/* Anchor for next button */
+.form-next-step a {
+    border: 1px;
+    background-color: lightskyblue;
+    display: flex;
+    padding: 5%;
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    font-size: 1.3em;
+    font-weight: bolder; 
+}
+
+/* Hover effect for next button */
+.form-next-step a:hover {
+    box-shadow: 5px 10px 6px -6px #777;
+}
+
+/* News letter selection wrapper */
+.form-row-newsletter {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: start; 
+    flex-basis: 30%;  
+
+}
+
+/* News letter selection label text */
+.form-row-newsletter label {
+    font-weight: bold;
+    text-align: center;
+    flex-basis: 70%;    
+}
+
+input[type="radio"] {
+    zoom: 1.5;
+}
+
+@media only screen and (max-width: 900px)
+{
+    .form-row-newsletter{
+        flex-basis: 100%;
+        justify-content: flex-start;  
+    } 
+    .form-row-newsletter label {
+        text-align: left;    
+    }   
+}
+
+/* Step 3 */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+}
+
+.prod-image-select {
+    flex-basis: 23%;
+    padding-top: 1%;
+}
+
+@media only screen and (max-width: 900px) {
+    .prod-image-select {
+        flex-basis: 48%;
+    }    
+}
+
+.prod-image-select img {
+    object-fit: scale-down; 
+    max-width: 100%; 
+    max-height: 90%;
+}
+
+.select-check {
+    text-align: right;
+    align-items: baseline;
+    font-weight: bold;
+}
+
+.wrapper-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 900px) {
+    .wrapper-category {
+        width: 50%;
+    }
+}
+
+.category-select {
+    flex-basis: 48%;
+    display: flex;
+    justify-content: flex-end; 
+    padding-top: 1%;   
+}
+
+.category-select label {
+    flex-basis: 68%;
+    text-align: right;
+    font-weight: bold;
+}
+
+.category-select input {
+    flex-basis: 30%;
+    zoom: 1.5;
+}
+
+/* Step 4 */
+.form-row-date label {
+    font-weight: bold;
+    text-align: right;
+    flex-basis: 69%;
+}
+
+.form-row-date input {
+    flex-basis: 10%;
+    height: 30px; 
+    text-align: left;
+}
+
+.form-row-ccv label {
+    font-weight: bold;
+    text-align: right;
+    flex-basis: 69%;
+}
+
+.form-row-ccv input {
+    flex-basis: 10%;
+    height: 30px; 
+    text-align: left;
+}
