@@ -33,13 +33,14 @@ console.log(searchedSong3);
 //Create our own playlist
 const myPlaylist = [];
 const anotherPlaylist = [];
-function addSong(songObject, playList) {
-    playList.push(...songObject); //In-place modification
+function addSong(songObject, playList) { 
+    playList.push({songObject});
+    //playList.push(...songObject); In-place modification can also used
 }
 
 function addSongToMyPlaylist(title, playList) {
     let songObject = getSongByTitle(title);
-    addSong(songObject, playList);
+    addSong(songObject, playList);  //Calling addSong() function inside addSongToMyPlaylist() function.
 }
 
 addSongToMyPlaylist('My baby', myPlaylist);

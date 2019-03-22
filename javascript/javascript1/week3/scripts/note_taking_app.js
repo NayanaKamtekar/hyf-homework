@@ -21,7 +21,6 @@ function getNoteFromId(id) {
     }
     return null;
 }
-
 getNoteFromId(2);
 getNoteFromId("1");
 getNoteFromId();
