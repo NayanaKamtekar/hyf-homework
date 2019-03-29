@@ -16,7 +16,7 @@ console.log(songDatabase);
 function getSongByTitle(title) {
     const songArray = [];
     for ( let i = 0; i < songDatabase.length; i++) {
-        if (songDatabase[i].title === title) {
+        if (songDatabase[i].title === title) {//if (songDatabase[i].indexOf(title) > 0)
             songArray.push(songDatabase[i]);
         }
     } 

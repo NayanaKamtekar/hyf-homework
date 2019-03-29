@@ -82,7 +82,7 @@ console.log(showStatus1(activities, todaysDate));
 //part 3 Create a function for calculating the activity a user has spent the most time on
 function mostUsedActivity(activityArray, date) {
     if (activityArray.length === 0) {
-        return 'Add some activities before calling showStatus'
+        return 'Add some activities before calling showStatus';
     }
     else if (activityArray.length > 0) {
         let sortedArray = [];
@@ -92,9 +92,9 @@ function mostUsedActivity(activityArray, date) {
             }
         }
         let maxDuration = sortedArray.sort(function(a, b) {
-            return b.duration - a.duration     //Sorted array in reverse way maximum value first
+            return b.duration - a.duration;     //Sorted array in reverse way maximum value first
         }); 
-        console.log("User has spent the most time on " + maxDuration[0].activity + ".")
+        console.log("User has spent the most time on " + maxDuration[0].activity + ".");
         console.log(maxDuration[0]);
         }
 }
