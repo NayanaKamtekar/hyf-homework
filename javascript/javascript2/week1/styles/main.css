@@ -1,0 +1,119 @@
+.booklist {
+    text-align: center;
+    list-style-type: none;
+}
+
+.booktitle {
+    color: rgb(126, 2, 126); 
+    font-family: 'Sancreek', cursive;
+}
+
+.mainsection {
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    margin: 30px auto;
+    border-width: 2px;
+    border-style: solid;
+    border-color: brown;
+    border-radius: 10px; 
+    width: 60%; 
+    position: relative;
+    height: 450px;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width: 900px){
+    .imagediv {
+        flex: 1;  
+    }
+    .bookiv {
+        flex: 1;
+        position: relative;
+        margin: auto;
+    }
+    .mainsection{
+        height: 650px;
+        width: 80%;
+    }
+    img {
+        border-radius: 10px;
+        position: relative;
+        margin: auto;
+        object-fit: scale-down ;
+        max-width: 100%; 
+        max-height: 90%;
+    }
+}
+
+img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.bookiv {
+    flex-basis: 50%;
+}
+
+.imagediv {
+    flex-basis: 40%;
+}
+
+
+/*styles for spirit_animal_name_generator*/
+
+#spirit-animal {
+    background-color: #EEE2DC;
+    font-family: 'Cantata One', cursive;
+    color: #AC3B61;
+}
+
+#result {
+    width: 40%;
+    height: 70px;
+    padding-top: 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50px;
+    text-align: center;
+    overflow:hidden;
+    font-family: 'Cantata One', cursive;
+    background-color: white;
+}
+
+#main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-container * {
+    flex-basis: 10%;
+}
+
+#main-container p, #main-container #input {
+    font-size: 20px;
+}
+
+#main-container select, #btn {
+    font-size: 18px;
+}
+
+header {
+    position: relative;
+    margin: 30px auto 10px;
+    height: 50px;
+    text-align: center;
+    text-shadow: 5px;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Cantata One', cursive;
+}
+@media only screen and (max-width: 900px){
+    #main-container p, #main-container #input {
+        font-size: 18px;
+    }
+    #result {
+        width: 50%;
+        height: 60px;
+        width: 60%;
+    }
+}

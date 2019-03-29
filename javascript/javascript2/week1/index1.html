@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Spirit Animal Name Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/css-reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet"> 
+    
+</head>
+<body id="spirit-animal">
+    <header>FIND YOUR SPIRIT ANIMAL!</header>
+
+    <br><br><br>
+    
+    <main>
+        <div id="main-container">
+            <p> 
+                First name: <input type="text" name="FirstName" id = "input">
+            </p>
+
+            <br><br><br>
+
+            <select id="chosenEvent" required>
+                <option value="">Choose Option</option>
+                <option value="mouseover">Hover over the box</option>
+                <option value="click">Click submit</option>
+                <option value="input">As you type</option>
+            </select>
+
+            <br><br>
+
+            <button id ="btn">Submit</button>
+
+            <br><br>
+
+            <p id = "result"></p>
+        </div>
+
+    </main>
+    
+    <script src="./scripts/spirit_animal_name_generator.js"></script>
+</body>
+</html>
