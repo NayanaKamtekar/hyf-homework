@@ -1,0 +1,132 @@
+body{
+    display: flex; 
+    background-color: rgb(170,170,170);
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Freckle Face', cursive;
+}
+
+header{
+    /* font-family: 'Freckle Face', cursive; */
+    font-size: 80px;
+    margin: 25px auto;
+    position: relative;
+    color: rgb(226, 5, 145);
+    /* font-weight: bold; */
+
+}
+@media only screen and (max-width: 900px){
+    header {
+        text-align: center;  
+    }
+}
+.inputdiv{
+    margin: auto;
+    position: relative;
+}
+input{
+    font-size: 25px; 
+    height: 25px;
+}
+
+button{
+    border-radius: 5px;
+    margin: 25px auto;
+    position: relative;
+    height: 60px;
+    font-size: 25px; 
+    font-weight: bolder;
+    color: white;
+    background-color: rgb(16, 169, 245);
+
+}
+#wrapper{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    font-size: 20px;
+    width: 80%;
+    height: 450px;
+    border-top: 2px solid rgb(53, 21, 21);
+    background-color:rgb(240,240,240);
+    border-radius: 10px;
+    /* border: 5px solid red; */
+}
+
+
+.wrapperdiv{
+    flex-basis: 50%;
+    align-items: center;
+    padding: 150px auto;
+    height: 450px;
+}
+#keyS{
+    border-right: 2px solid rgb(53, 21, 21);
+}
+  
+.rotate{
+    margin: auto;  
+    text-align: center;
+    font-size: 35px;
+    /* font-family: 'Freckle Face', cursive; */
+    /* border: 5px solid red;  */
+}
+.wrapperdiv1{
+    margin: 180px auto;  
+    text-align: center;
+}
+
+
+#rightCanvas, #leftCanvas {
+    position: fixed;
+    z-index: 0;
+    width: 40%;
+    height: 60%;
+}
+
+#restart{
+    margin: auto;
+    top: 450px;
+    position: fixed;
+    z-index: 0;
+    align-items: center;
+
+}
+#DrowText{
+    padding: 25px;
+    top: 350px;
+    position: fixed;
+    z-index: 0;
+    align-items: center;
+    border: 1px solid rgb(53, 21, 21);
+    border-radius: 5px;
+    font-size: 30px; 
+    color:rgb(245, 24, 24);
+    background-color:  rgb(170,170,170);
+}
+
+#countdown{
+    padding: 25px;
+    top: 350px;
+    position:absolute; 
+    z-index: 0;
+    align-items: center; 
+    border: 1px solid rgb(53, 21, 21);
+    border-radius: 5px;
+    font-size: 30px; 
+    color:rgb(236, 55, 10);
+    background-color:  rgb(170,170,170);
+}
+
+/******styles for warmup excercise*******/
+
+#mainDiv{
+    height: 600px;
+    width:90%;
+    border: 1px solid rgb(53, 21, 21);
+    text-align: center;
+    font-size:30;
+    position: relative;
+    margin: 100px auto;
+}

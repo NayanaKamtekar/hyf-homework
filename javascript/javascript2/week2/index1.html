@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fastest Presser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/css-reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Freckle+Face" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        Fastest Presser
+    </header>
+
+<!-- Time input -->
+    <div class='inputdiv'>
+        <input type="number" id="input" placeholder="Set Sconds">
+    </div>
+
+<!-- This is button to start game -->
+    <button id='btn'>Start game!</button>
+
+<!-- KeyS and KeyL field -->
+    <div id='wrapper'>
+        <div class="wrapperdiv" id='keyS'>
+            <canvas id='leftCanvas' hidden></canvas>      
+            <div class="wrapperdiv1">
+                <p class='rotate'>Press S</p>
+                <p id='result1' hidden>a</p>
+            </div> 
+        </div>
+        
+        <div class="wrapperdiv" id='keyL'>
+            <canvas id='rightCanvas' hidden></canvas> 
+            <div class="wrapperdiv1">
+                <p class='rotate'>Press L</p>
+                <p id='result2' hidden>a</p>
+            </div>
+        </div>
+    </div>
+
+<!-- Below is the elements which are hidden during game. -->
+    <button id="restart" value="Reset form" hidden>Restart</button>
+
+    <p id="DrowText" hidden></p>
+
+    <p id="countdown" hidden ></p>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>    
+    <script src="./scripts/The fastest_presser_in_this_realm.js"></script>
+    
+    
+</body>
+</html>
