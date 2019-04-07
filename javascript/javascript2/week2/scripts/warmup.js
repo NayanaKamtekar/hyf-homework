@@ -78,16 +78,14 @@ runAfterDelay(5000, earthFunc);
 
 /*Part 8: Check if we have double clicked on the page. A double click is defined by two clicks within 0.5 seconds. 
 If a double click has been detected, log out the text: "double click!"*/ 
+function logout() {
+    console.log("You double-clicked!");
+    element.removeEventListener('click', logout);
+    //element.addEventListener('click', myFunction); //If double-clicked multiple time in the interval then it will only count as one if the first listener is not activated again
+}
 
 function myFunction() {
-    let element = document.getElementById('mainDiv')
     element.removeEventListener('click', myFunction);
-
-    function logout() {
-        console.log("You double-clicked!");
-        element.removeEventListener('click', logout);
-        //element.addEventListener('click', myFunction);
-    }
 
     element.addEventListener('click', logout);
 
@@ -97,8 +95,8 @@ function myFunction() {
     }, 500);
 }
 
-let bodyTag = document.getElementsByTagName('body');
-let startClick = bodyTag[0].addEventListener('click', myFunction);
+var element = document.getElementById('mainDiv')
+let startClick = element.addEventListener('click', myFunction);
 
 
 
