@@ -1,5 +1,5 @@
 window.onload = function () {
-    var gifUrlString = 'http://api.giphy.com/v1/gifs/trending?api_key=9pigJPp5fkD3Y6ZpTAPDK7hy7lX1CFo4&limit=18';
+    var gifUrlString = 'https://api.giphy.com/v1/gifs/trending?api_key=9pigJPp5fkD3Y6ZpTAPDK7hy7lX1CFo4&limit=18';
 
     fetch(gifUrlString)
         .then( response => response.json() )
