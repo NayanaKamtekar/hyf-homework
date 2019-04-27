@@ -1,0 +1,19 @@
+{
+    "model": "Q5",
+    "type": "car",
+    "subtype": "SUV",
+    "maker": "Audi",
+    "Year": 2017,
+    "variant": [
+        {
+            "name": "TFSI Quattro",
+            "cylinder capacity": "1984cc",
+            "max power": "252hp"
+        },
+        {
+            "name": "TDI Quattro",
+            "cylinder capacity": "1968cc",
+            "max power": "190hp"            
+        }
+    ]
+}

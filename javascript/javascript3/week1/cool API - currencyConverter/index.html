@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/css-reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <section>
+        <div>
+            <input type="number" placeholder="You send" id='srcAmount' class="inputBox">
+            <select id='srcCurrency' class="countryList"></select>
+            <img id='srcImg' class="countryIcon">
+        </div>
+        <div>
+            <p id="exchangeRate"></p>
+        </div>
+        <div>
+            <input type="number" placeholder="Recipient gets" id='trgAmount' class="inputBox" readonly>
+            <select id='trgCurrency' class="countryList"></select>
+            <img id='trgImg' class="countryIcon">
+        </div>        
+    </section>
+    <script src="./scripts/countryDetails.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
