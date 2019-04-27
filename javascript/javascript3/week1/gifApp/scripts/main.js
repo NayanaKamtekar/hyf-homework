@@ -17,7 +17,7 @@ buttonEvent.addEventListener('click',function() {
     }
 
     if (searchString !== '') {
-        let gifUrlString = 'http://api.giphy.com/v1/gifs/search?api_key=9pigJPp5fkD3Y6ZpTAPDK7hy7lX1CFo4&limit=' + searchNumber + '&q=' + searchString;
+        let gifUrlString = 'https://api.giphy.com/v1/gifs/search?api_key=9pigJPp5fkD3Y6ZpTAPDK7hy7lX1CFo4&limit=' + searchNumber + '&q=' + searchString;
 
         fetch(gifUrlString)
         .then( response => response.json() )
