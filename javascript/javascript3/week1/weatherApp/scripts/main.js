@@ -62,7 +62,7 @@ function displayWeather(weatherObj, utcOffset) {
     htmlTemp.innerHTML = tempString;
 
     let iconElem = document.querySelector('.icon');
-    iconElem.src = 'http://openweathermap.org/img/w/' + weatherObj.weather[0].icon + '.png';
+    iconElem.src = 'https://openweathermap.org/img/w/' + weatherObj.weather[0].icon + '.png';
     iconElem.style.border = 'solid';
 
     let weatherDescElem = document.querySelector('.weatherIcon figcaption');
