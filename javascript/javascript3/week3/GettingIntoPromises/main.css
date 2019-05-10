@@ -1,0 +1,9 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.gitRepoWrapper>ul>li {
+    margin-top: 20px;
+    list-style: none;
+    font-size: 1.2em;
+}
