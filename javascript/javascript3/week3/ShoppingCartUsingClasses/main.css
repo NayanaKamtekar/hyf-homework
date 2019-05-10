@@ -1,0 +1,122 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #F9FBFD;
+    width: 50%;
+    margin: 50px auto;
+    position: relative;
+}
+header {
+    margin: 20px auto;
+    font-size: 30px;
+    font-weight: bolder;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+section.products {
+    margin-top: 100px;
+}
+
+section.products>ul>li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 12px 12px;
+}
+
+section.products>ul>li:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+section.products li div {
+    margin-right: 12px;
+    width: 100px;
+}
+
+section.products li .name {
+    width: 200px;
+}
+
+section.total {
+    margin: 20px;
+}
+
+section.total>p {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.outer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: absolute;
+    top:50px;
+    background-color: white;
+    width: 100%;
+}
+
+.outer-wrapper>div {
+    padding: 10px 5px 0 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0 0 10px 10px;
+}
+
+.outer-wrapper>input {
+    width: 100%;
+}
+
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modalContent {
+    z-index: 1;
+    background-color: white;
+    width: 30%;
+    position: relative;
+    margin: 10% auto;
+    line-height: 1.6;
+    padding: 0 1%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17)
+}
+
+.closeBtn {
+    display: block;
+    font-size: 1.5em;
+    color: grey;
+    float: right;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalContent>p {
+    display: block;
+    clear: both;
+}
+
+.searchItems>p:hover {
+    background-color: rgba(0, 0, 255, 0.4);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
