@@ -22,7 +22,7 @@ function getRandomArbitrary(min, max) {
 }
 
 
-canvas.addEventListener('mousedown', (e) => {
+canvas.addEventListener('mousemove', (e) => {
     let randomR = getRandomArbitrary(10, 50);
     let colorR = getRandomArbitrary(0, 255);
     let colorG = getRandomArbitrary(0, 255);
