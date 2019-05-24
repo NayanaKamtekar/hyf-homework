@@ -1,0 +1,36 @@
+[
+  {
+    "title": "NodeJS",
+    "duration": "5",
+    "mentors": [
+      "Abed",
+      "Marco",
+      "Radoslaw"
+    ]
+  },
+  {
+    "title": "JS",
+    "duration": "9",
+    "mentors": [
+      "Abed",
+      "Marco",
+      "Radoslaw"
+    ]
+  },
+  {
+    "title": "HTML-CSS",
+    "duration": "3",
+    "mentors": [
+      "Abed",
+      "Benjamin"
+    ]
+  },
+  {
+    "title": "Database",
+    "duration": "4",
+    "mentors": [
+      "Benjamin",
+      "Niels Gregersen"
+    ]
+  }
+]
