@@ -1,0 +1,30 @@
+[
+  {
+    "name": "NodeJS",
+    "duration": 5
+  },
+  {
+    "name": "JS",
+    "duration": 9
+  },
+  {
+    "name": "HTML-CSS",
+    "duration": 3
+  },
+  {
+    "name": "Kotlin",
+    "duration": 5
+  },
+  {
+    "name": "Python",
+    "duration": 5
+  },
+  {
+    "name": "C++",
+    "duration": 5
+  },
+  {
+    "name": "Ruby",
+    "duration": 7
+  }
+]
