@@ -25,7 +25,7 @@
     status.name
     FROM task
     INNER JOIN status ON status.id = task.status_id
-    WHERE NOT status.name ='Done';
+    WHERE NOT status.name ='Done'; -- Where status.name <> 'Done' or Where status.name != 'Done'
 -- Answer: 23 row(s) returned. 
 
 
@@ -47,7 +47,7 @@
     SELECT task.title, 
     due_date
     FROM task
-    WHERE title LIKE '%database%';
+    WHERE title LIKE '%database%' OR description LIKE'%database%';
 -- Answer: 5 row(s) returned.
 
 
