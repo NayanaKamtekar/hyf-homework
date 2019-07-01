@@ -70,9 +70,9 @@
 
 -- (10) Get the names of all statuses, sorted by the status with most tasks first   
     SELECT status.name, 
-    count(*)AS count
+    count(*)AS task_count
     FROM task
     INNER JOIN status ON status.id = task.status_id
-    GROUP BY status.name 
-    ORDER BY count DESC;
+    GROUP BY status.id -- it's good to use primary key GROUP BY status.id instead of status.name
+    ORDER BY task_count DESC;
 -- Answer: In progress: 15, Done: 12, Not started: 8 
