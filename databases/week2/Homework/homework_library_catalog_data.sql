@@ -3,7 +3,7 @@
 	"book_details" table has name of the book, it has one record per book title
 */
 CREATE TABLE `books` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+  `id` int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -12,11 +12,11 @@ CREATE TABLE `books` (
 	will have one copy per book
 */
 CREATE TABLE `book_copies` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+  `id` int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `edition` varchar(255) NOT NULL,
   `book_id` int unsigned NOT NULL UNIQUE,
   `purchased_on` DATETIME NOT NULL,
-  `price` int(10) unsigned,
+  `price` float unsigned,
 	CONSTRAINT `fk_books` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE    
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -24,7 +24,7 @@ CREATE TABLE `book_copies` (
 	"users" table will have library users name and contact details
 */
 CREATE TABLE `users` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+  `id` int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NULL
@@ -59,12 +59,12 @@ insert into books (id, name) values (8, 'The Ugly Duckling');
 -- book_copies
 insert into book_copies (id, edition, book_id, purchased_on, price) values (1, 'Nov1999', 8, '2000-09-29 13:38:42', 300);
 insert into book_copies (id, edition, book_id, purchased_on, price) values (2, 'Jan2009', 1, '2000-09-29 23:38:42', 250);
-insert into book_copies (id, edition, book_id, purchased_on, price) values (3, 'Oct1998', 4, '2000-09-29 23:38:42', 480);
-insert into book_copies (id, edition, book_id, purchased_on, price) values (4, 'Dec2006', 7, '2000-09-29 23:38:42', 360);
+insert into book_copies (id, edition, book_id, purchased_on, price) values (3, 'Oct1998', 4, '2000-09-29 23:38:42', 489.50);
+insert into book_copies (id, edition, book_id, purchased_on, price) values (4, 'Dec2006', 7, '2000-09-29 23:38:42', 366.95);
 insert into book_copies (id, edition, book_id, purchased_on, price) values (5, 'Nov2018', 2, '2000-09-29 23:38:42', 500);
-insert into book_copies (id, edition, book_id, purchased_on, price) values (6, 'May2003', 6, '2000-09-29 23:38:42', 200);
+insert into book_copies (id, edition, book_id, purchased_on, price) values (6, 'May2003', 6, '2000-09-29 23:38:42', 200.50);
 insert into book_copies (id, edition, book_id, purchased_on, price) values (7, 'Feb2015', 3, '2000-09-29 23:38:42', 250);
-insert into book_copies (id, edition, book_id, purchased_on, price) values (8, 'Jul2013', 5, '2000-09-29 23:38:42', 320);
+insert into book_copies (id, edition, book_id, purchased_on, price) values (8, 'Jul2013', 5, '2000-09-29 23:38:42', 325.95);
 
 -- users
 insert into users (id, name, email, phone) values (1, 'Aarika Ellingworth', 'aellingworth0@harvard.edu', '483-396-8795');
@@ -109,13 +109,13 @@ DELETE FROM loan_transactions
 ORDER BY user_id DESC
 LIMIT 2;
 
--- removing one column from table
-ALTER TABLE users
-DROP phone;
-
 -- adding one column from in the table
 ALTER TABLE users
 ADD COLUMN address TEXT AFTER phone;
+
+-- removing one column from table
+ALTER TABLE users
+DROP phone;
 
 -- adding index on one of the column
 CREATE INDEX users_name
