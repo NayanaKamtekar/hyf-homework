@@ -1,3 +1,4 @@
+-- Library catalog data tables
 /*
 	"book_details" table has name of the book, it has one record per book title
 */
@@ -31,7 +32,7 @@ CREATE TABLE `users` (
 
 /*
 	"loan_transaction" has one record per borrowing of the book copy. A user can borrow mutliple books, and a book can be borrowed by multiple
-    users (in different transactions). Thus, this table establishes many to many relation between book_copies and users tables
+  users (in different transactions). Thus, this table establishes many to many relation between book_copies and users tables
 */
 
 CREATE TABLE `loan_transactions` (
