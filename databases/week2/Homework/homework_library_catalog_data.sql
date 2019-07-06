@@ -16,7 +16,7 @@ CREATE TABLE `book_copies` (
   `edition` varchar(255) NOT NULL,
   `book_id` int unsigned NOT NULL UNIQUE,
   `purchased_on` DATETIME NOT NULL,
-  `price` float unsigned,
+  `price` DECIMAL(10,2) unsigned,
 	CONSTRAINT `fk_books` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE    
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
