@@ -33,7 +33,7 @@ router.post('/', (req, res, next) => {
     {
         "email": "nayana@hyf.dk",
         "password": "coding_at_hyf",
-        "create_time": "2019-02-02T22:00:00.000Z",
+        "create_time": "2019-02-02 22:00:00",
         "age": 30,
         "name": "Nayana Kamtekar",
         "country": "India"
