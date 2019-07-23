@@ -19,7 +19,7 @@ router.get('/test', (req, res, next) => {
     console.log(req.body);
     // query parameters
     console.log(req.query);
-    sql.query(`SELECT * FROM \`homework_lesson3\`.users;`, function (error, result) {
+    sql.query(`SELECT * FROM users;`, function (error, result) {
         res.setHeader('Content-Type', 'application/json');
         if (error) return handleError(res, error);
         res.end(JSON.stringify(result));
@@ -29,20 +29,20 @@ router.get('/test', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
     //POST: http://localhost:5000/api/users/
-   /* added user
+    /*added user
     {
         "email": "nayana@hyf.dk",
         "password": "coding_at_hyf",
-        "create_time": "2019-02-02 22:00:00",
+        "create_time": "2019-02-02T22:00:00.000Z",
         "age": 30,
         "name": "Nayana Kamtekar",
         "country": "India"
-    }
-    */
+    }*/
+    
 
-    let dbQuery = `INSERT INTO \`homework_lesson3\`.users (email, password, create_time, age, name, country) VALUES ('${req.body.email}', '${req.body.password}', '${req.body.create_time}', ${req.body.age}, '${req.body.name}', '${req.body.country}')`;
-
-    sql.query(dbQuery, function (error, result) {
+    let dbQuery = 'INSERT INTO users (email, password, create_time, age, name, country) VALUES (?)';
+    
+    sql.query(sql.format(dbQuery,[[req.body.email, req.body.password, req.body.create_time, req.body.age, req.body.name, req.body.country]]), function (error, result) {
         res.setHeader('Content-Type', 'application/json');
         if (error) return handleError(res, error);
         res.end(JSON.stringify(result));
@@ -56,10 +56,11 @@ router.get('/', (req, res, next) => {
     //GET: http://localhost:5000/api/users?min-age=29&max-age=36
     //GET: http://localhost:5000/api/users?min-age=29&max-age=36&country=india
     //GET: http://localhost:5000/api/users?age=30
-
+    
     var where_clause;
-    var order_clause;
-    var dbQuery = `SELECT * FROM \`homework_lesson3\`.users`;
+    var dbQuery = `SELECT * FROM users`;
+    var where_parms = [];
+    var sort_parms = [];
 
     for (const key in req.query) {
         let keyLower = key.toLowerCase();
@@ -67,39 +68,35 @@ router.get('/', (req, res, next) => {
 
         //Building up of order clause
         if (keyLower === 'sort') {
-            if (order_clause !== undefined) { // if we have already encounter order by field (variable)
-                order_clause = `${order_clause}, ${req.query[key]}`
-            }
-            else {
-                order_clause = `${req.query[key]}`
-            }
+            sort_parms.push(req.query[key]);
         }
         else if (keyLower !== 'order') { //Building up of where clause
             if (min_max.length < 2) {
                 if (where_clause !== undefined) {
-                    where_clause = `${where_clause} AND ${key} = '${req.query[key]}'`;
+                    where_clause = `${where_clause} AND ?? = ?`;
                 }
                 else {
-                    where_clause = `${key} = '${req.query[key]}'`;
+                    where_clause = `?? = ?`;
                 }
+                where_parms.push(key, req.query[key]);
             }
             else {
                 if (where_clause !== undefined) {
                     if (min_max[0] === 'min') {
-                        where_clause = `${where_clause} AND ${min_max[1]} > '${req.query[key]}'`;
+                        where_clause = `${where_clause} AND ?? > ?`;
                     }
                     else if (min_max[0] === 'max') {
-                        where_clause = `${where_clause} AND ${min_max[1]} < '${req.query[key]}'`;
+                        where_clause = `${where_clause} AND ?? < ?`;
                     }                    
-                }
-                else {
+                } else {
                     if (min_max[0] === 'min') {
-                        where_clause = `${min_max[1]} > '${req.query[key]}'`;
+                        where_clause = `?? > ?`;
                     }
                     else if (min_max[0] === 'max') {
-                        where_clause = `${min_max[1]} < '${req.query[key]}'`;
+                        where_clause = `?? < ?`;
                     } 
-                }                
+                }
+                where_parms.push(min_max[1], req.query[key]);
             }
         }
     }
@@ -109,23 +106,29 @@ router.get('/', (req, res, next) => {
         let keyLower = key.toLowerCase();
 
         if (keyLower === 'order') {
-            if (order_clause !== undefined) {
-                order_clause = `${order_clause} ${req.query[key]}`;
-            }
+            var order_parms = req.query[key];
             break; //Search for asc or desc keyword and stops after first encounter
         }
     }
-
+    
     // Attached WHERE and ORDER BY clause to dbQuery
     if (where_clause !== undefined) {
-        dbQuery = ` ${dbQuery} WHERE ${where_clause}`;
+        dbQuery = `${dbQuery} WHERE ${where_clause}`;
     }
+    
+    if (sort_parms.length !== 0) {
+        dbQuery = `${dbQuery} ORDER BY ??`;
 
-    if (order_clause !== undefined) {
-        dbQuery = ` ${dbQuery} ORDER BY ${order_clause}`;
+        if (order_parms !== undefined) {
+            dbQuery = `${dbQuery} ${order_parms}`;
+        }
     }
+    console.log('>>>' + dbQuery);
+    console.log([...where_parms, sort_parms]);
+    console.log('>>>' + sql.format(dbQuery,[...where_parms, sort_parms]));
+    
 
-    sql.query(dbQuery, function (error, result) {
+    sql.query(sql.format(dbQuery,[...where_parms, sort_parms]), function (error, result) {
         res.setHeader('Content-Type', 'application/json');
         if (error) return handleError(res, error);
         res.end(JSON.stringify(result)); 
@@ -138,7 +141,7 @@ router.get('/:email', (req, res, next) => {
 
     console.log(req.params.email)
     // Create the sql that returns a specific user matching the email
-    let dbQuery = `SELECT * FROM \`homework_lesson3\`.users WHERE LOWER(email) = LOWER('${req.params.email}')`;
+    let dbQuery = sql.format('SELECT * FROM users WHERE email = ?', [req.params.email]);
     
     sql.query(dbQuery, function (error, result) {
         res.setHeader('Content-Type', 'application/json');
@@ -153,20 +156,25 @@ router.put('/:email', (req, res, next) => {
 
     // Create the sql that updates information about a user matching the email
     var set_clause;
+    var set_parms = [];
     
     //Building up of set clause
     for (const key in req.query) {
         if (set_clause !== undefined) {
-            set_clause = `${set_clause}, ${key} = '${req.query[key]}'`;
+            set_clause = `${set_clause}, ?? = ?`;
         }
         else {
-            set_clause = `${key} = '${req.query[key]}'`;
+            set_clause = '?? = ?';
         }
-    }
 
-    let dbQuery = `UPDATE \`homework_lesson3\`.users SET ${set_clause} WHERE LOWER(email) = LOWER('${req.params.email}')`;
+        set_parms.push(key, req.query[key]);
+    }
     
-    sql.query(dbQuery, function (error, result) {
+    set_parms.push(req.params.email);
+    
+    let dbQuery = `UPDATE users SET ${set_clause} WHERE email = ?`;
+    
+    sql.query(sql.format(dbQuery,set_parms), function (error, result) {
         res.setHeader('Content-Type', 'application/json');
         if (error) return handleError(res, error);
         res.end(JSON.stringify(result));
@@ -178,9 +186,9 @@ router.delete('/:email', (req, res, next) => {
     //DELETE: http://localhost:5000/api/users/nKamtekar@hyf.dk
 
     // Delete the information about a user matching the email
-    let dbQuery = `DELETE FROM \`homework_lesson3\`.users WHERE LOWER(email) = LOWER('${req.params.email}')`;
+    let dbQuery = 'DELETE FROM users WHERE email = ?';
     
-    sql.query(dbQuery, function (error, result) {
+    sql.query(sql.format(dbQuery,[req.params.email]), function (error, result) {
         res.setHeader('Content-Type', 'application/json');
         if (error) return handleError(res, error);
         res.end(JSON.stringify(result));
