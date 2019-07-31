@@ -5,7 +5,7 @@ class TodoTaskTitle extends React.Component {
     render() {
         return(
          <h1>Todo List</h1>
-        )
+        );
     }    
 }
 
@@ -17,7 +17,7 @@ class TodoTask extends React.Component {
             <li>
                 {description} , {deadline}
             </li>
-        )
+        );
     }    
 }
 
@@ -28,7 +28,7 @@ class TodoTaskList extends React.Component {
 
         const listOfTask = tasks.map(elem =>{
             return <TodoTask task={elem}/>
-        })
+        });
         return(
             <div>
                 <TodoTaskTitle></TodoTaskTitle>
@@ -36,7 +36,7 @@ class TodoTaskList extends React.Component {
                     {listOfTask}
                 </ul>
             </div>
-        )
+        );
     }    
 }
 
