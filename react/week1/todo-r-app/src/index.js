@@ -26,8 +26,8 @@ class TodoTaskList extends React.Component {
         console.log(this.props);
         const { tasks }=this.props;
 
-        const listOfTask = tasks.map(elem =>{
-            return <TodoTask task={elem}/>
+        const listOfTask = tasks.map(taskElem =>{
+            return <TodoTask key={taskElem.id} task={taskElem}/>
         });
         return(
             <div>
@@ -46,9 +46,9 @@ ReactDOM.render(
     <TodoTaskList 
         tasks={
             [
-                {description: "Get out of bed", deadline: "Wed Sep 13 2017"},
-                {description: "Brush teeth", deadline: "Thu Sep 14 2017"},
-                {description: "Get out of bed", deadline: "Fri Sep 15 2017"}
+                {id: 1, description: "Get out of bed", deadline: "Wed Sep 13 2017"},
+                {id: 2, description: "Brush teeth", deadline: "Thu Sep 14 2017"},
+                {id: 3, description: "Get out of bed", deadline: "Fri Sep 15 2017"}
             ]
         }
     />, root);
